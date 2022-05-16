@@ -4,111 +4,60 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.SearchView;
-import android.widget.Spinner;
+import android.widget.RatingBar;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
-
-
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class StoreActivity extends AppCompatActivity {
-
-    ListView storeList;
-    int[] resIds = {R.drawable.mc, R.drawable.pizzahut,
-            R.drawable.kfc, R.drawable.dominopizza};
-    String[] storeNameArray;
-    MyAdapter storeAdapter = null;
-
+    private int[] storeimage = {R.drawable.mc,R.drawable.pizzahut,R.drawable.kfc};
+    private String[] storename = {"麥當勞","必勝客","肯德基"};
+    private String[] distance={"0.3","0.5","2.0"};
+    private int[] foodimage = {R.drawable.cola,R.drawable.fried,R.drawable.hamburger};
+    private String[] imgtxt = {"紅茶","綠茶","珍珠奶茶"};
+    private String[] payment={"$30","$30","$60"};
+    private ListView listView;
+    private Button menu;
+    private Button comment;
+    private ImageView imageView;
+    private TextView name;
+    private TextView storeDistance;
+    private RatingBar ratingBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store);
-
-        //自定義spinner
-        Spinner spinner = findViewById(R.id.spinner);
-        ArrayAdapter<CharSequence> adapter= ArrayAdapter.createFromResource(
-                this,            //Context
-                R.array.address,        //被宣告的字串陣列
-                R.layout.myselect_item  //Spinner 要呈現的樣子
-        );
-        adapter.setDropDownViewResource(R.layout.myspinner_dropdown);
-        spinner.setAdapter(adapter);
-
-        //設定搜尋顯示
-        SearchView sv = findViewById(R.id.searchView);
-        sv.setQueryHint("搜尋想吃的料理");
-        sv.setIconifiedByDefault(false);
-
-        //連結元件
-        storeList = this.findViewById(R.id.storeList);
-
-        storeNameArray = getResources().getStringArray(R.array.storeName);
-
-        //建立自訂的Adapter
-        storeAdapter = new MyAdapter(this);
-
-        //設定ListView資料來源
-        storeList.setAdapter(storeAdapter);
-
-        //建立事件
-        storeList.setOnItemClickListener(new ListView.OnItemClickListener(){
-
-            @Override
-            public void onItemClick(AdapterView<?>parent, View view, int position, long id){
-                Intent goTest = new Intent();
-                goTest.setClass(StoreActivity.this, testActivity.class);
-                startActivity(goTest);
-                Toast.makeText(StoreActivity.this,
-                        "you click " + storeNameArray[position],Toast.LENGTH_SHORT).show();
-               // startActivity(new Intent(StoreActivity.this, testActivity));
-            }
-
-        });
+        Intent intent = getIntent();
+        int position = intent.getIntExtra("pos", 0);
+        name = (TextView) findViewById(R.id.name);
+        name.setText(storename[position]);
+        storeDistance = (TextView) findViewById(R.id.distance);
+        storeDistance.setText(distance[position] + "km away");
+        imageView = (ImageView) findViewById(R.id.imageView);
+        imageView.setImageDrawable(getResources().getDrawable(storeimage[position]));
+        List<Map<String, Object>> items = new ArrayList<>();
+        for (int i = 0; i < foodimage.length; i++) {
+            Map<String, Object> item = new HashMap<>();
+            item.put("image", foodimage[i]);
+            item.put("name", imgtxt[i]);
+            item.put("payment", payment[i]);
+            items.add(item);
+        }
+        SimpleAdapter adapter = new SimpleAdapter(this,
+                items,R.layout.food_item,new String[]{"image","name","payment"},
+                new int[]{R.id.image,R.id.name,R.id.payment});
+        listView=(ListView)findViewById(R.id.list);
+        listView.setAdapter(adapter);
     }
-
-    class MyAdapter extends BaseAdapter {
-        LayoutInflater myInflater;
-
-        public MyAdapter(StoreActivity s){
-            myInflater = LayoutInflater.from(s);
-        }
-        @Override
-        public int getCount(){
-            return storeNameArray.length;
-        }
-
-        @Override
-        public Object getItem(int position){
-            return storeNameArray[position];
-        }
-
-        @Override
-        public long getItemId(int position){
-            return position;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent){
-            convertView = myInflater.inflate(R.layout.store_list, null);
-
-            ImageView storePicture = convertView.findViewById(R.id.storePicture);
-            TextView storeName = convertView.findViewById(R.id.storeName);
-
-            storePicture.setImageResource(resIds[position]);
-            storeName.setText(storeNameArray[position]);
-
-            return convertView;
-        }
+    public void back(View v){
+        finish();
     }
-
-
 }

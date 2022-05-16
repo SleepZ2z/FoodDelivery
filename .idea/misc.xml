@@ -3,20 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/oscar/AndroidStudioProjects/FoodDiliveryApp/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Users/oscar/AndroidStudioProjects/FoodDiliveryApp/app/src/main/res/layout/activity_store.xml" value="0.33" />
-        <entry key="..\:/Users/oscar/AndroidStudioProjects/FoodDiliveryApp/app/src/main/res/layout/activity_test.xml" value="0.33" />
-        <entry key="..\:/Users/oscar/AndroidStudioProjects/FoodDiliveryApp/app/src/main/res/layout/activity_test2.xml" value="0.18034447821681865" />
-        <entry key="..\:/Users/oscar/AndroidStudioProjects/FoodDiliveryApp/app/src/main/res/layout/myselect_item.xml" value="0.1879432624113475" />
-        <entry key="..\:/Users/oscar/AndroidStudioProjects/FoodDiliveryApp/app/src/main/res/layout/myspinner_dropdown.xml" value="0.1879432624113475" />
-        <entry key="..\:/Users/oscar/AndroidStudioProjects/FoodDiliveryApp/app/src/main/res/layout/store_list.xml" value="0.33" />
+        <entry key="..\:/Users/JEFF/Desktop/FoodDelivery/app/src/main/res/layout/activity_store.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/JEFF/Desktop/FoodDelivery/app/src/main/res/layout/activity_test.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/JEFF/Desktop/FoodDelivery/app/src/main/res/layout/food_item.xml" value="0.14130434782608695" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/build/classes" />
-  </component>
-  <component name="ProjectType">
-    <option name="id" value="Android" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
