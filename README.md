@@ -45,11 +45,14 @@
   <td>D0845056</td>
  </tr>
  <tr>
+  <td>2022/5/17</td>
+ </tr>
+ <tr>
   <td>US-004 設計使用者店家頁面</td>
   <td>SleepZ2z</td>
  </tr>
  <tr>
-  <td>US-002 實作使用者店家頁面</td>
+  <td>US-004 實作使用者店家頁面</td>
   <td>SleepZ2z</td>
  </tr>
  
