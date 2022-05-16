@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">外送大師</string>
+    <string name="login">登入</string>
+    <string name="test">測試用</string>
+    <string-array name="address">
+        <item>崇義街</item>
+        <item>復興路</item>
+        <item>福星路</item>
+    </string-array>
+    <string-array name="storeName">
+        <item>麥當勞(福星店)</item>
+        <item>必勝客(福星店)</item>
+        <item>肯德雞(福星店)</item>
+        <item>達美樂(福星店)</item>
+    </string-array>
+</resources>
