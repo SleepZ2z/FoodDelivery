@@ -44,9 +44,11 @@
   <td>US-002 實作使用者瀏覽店家介面</td>
   <td>D0845056</td>
  </tr>
- 
+ </table>
+
  2022/5/17
  
+ <table>
  <tr>
   <td>US-004 設計使用者店家頁面</td>
   <td>SleepZ2z</td>
