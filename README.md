@@ -57,5 +57,9 @@
   <td>US-004 實作使用者店家頁面</td>
   <td>SleepZ2z</td>
  </tr>
+  <tr>
+  <td>US-001 實作帳號密碼驗證功能</td>
+  <td>D0886155</td>
+ </tr>
  
 </table>
