@@ -29,37 +29,56 @@
 
 <table>
  <tr>
-  <td>完成議程</td>
-  <td>誰完成</td>
+  <td>姓名</td>
+  <td>學號</td>
+  <td>github名字</td>
+  <td>issue</td>
  </tr>
  <tr>
-  <td>US-002 設計使用者的瀏覽店家介面</td>
-  <td>一起完成</td>
- </tr>
- <tr>
-  <td>US-003 設計使用者點餐介面</td>
-  <td>一起完成</td>
- </tr>
- <tr>
-  <td>US-002 實作使用者瀏覽店家介面</td>
+  <td>林郁荃</td>
   <td>D0845056</td>
+  <td>D0845056</td>
+  <td>7,8,9</td>
  </tr>
- </table>
+ <tr>
+  <td>邱紀元</td>
+  <td>D0843853</td>
+  <td>SleepZ2z</td>
+  <td>7,8</td>
+ </tr>
+ <tr>
+  <td>游鎮瑀</td>
+  <td>D0886155</td>
+  <td>D0886155</td>
+  <td>7,8</td>
+ </tr>
+</table>
 
  2022/5/17
  
  <table>
  <tr>
-  <td>US-004 設計使用者店家頁面</td>
-  <td>SleepZ2z</td>
+  <td>姓名</td>
+  <td>學號</td>
+  <td>github名字</td>
+  <td>issue</td>
  </tr>
  <tr>
-  <td>US-004 實作使用者店家頁面</td>
+  <td>林郁荃</td>
+  <td>D0845056</td>
+  <td>D0845056</td>
+  <td>2,4</td>
+ </tr>
+ <tr>
+  <td>邱紀元</td>
+  <td>D0843853</td>
   <td>SleepZ2z</td>
+  <td>2,4,5</td>
  </tr>
-  <tr>
-  <td>US-001 實作帳號密碼驗證功能</td>
+ <tr>
+  <td>游鎮瑀</td>
   <td>D0886155</td>
+  <td>D0886155</td>
+  <td>2,4,11</td>
  </tr>
- 
 </table>
