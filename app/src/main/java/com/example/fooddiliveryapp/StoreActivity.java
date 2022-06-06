@@ -22,14 +22,15 @@ import java.util.List;
 import java.util.Map;
 
 public class StoreActivity extends AppCompatActivity {
-    private int[] storeimage = {R.drawable.mc,R.drawable.pizzahut,R.drawable.kfc};
+    private int[] storeimage = {R.drawable.mc,R.drawable.pizzahut,R.drawable.kfc,R.drawable.dominopizza};
     private int[] peopleimage = {R.drawable.sleep,R.drawable.totoro,R.drawable.dog};
-    private double[] storestar = {4.5,3.0,5.0};
+    private double[] storestar = {4.5,3.0,5.0,4.0};
     private String[] peoplename = {"卡比獸","龍貓","小白"};
     private String[] peoplecomment = {"好好吃","好吃","不喜歡"};
-    private String[] storename = {"麥當勞","必勝客","肯德基"};
-    private String[] distance={"0.3","0.5","2.0"};
+    private String[] storename = {"麥當勞","必勝客","肯德基","達美樂"};
+    private String[] distance={"0.3","0.5","2.0","1.8"};
     private ListView listView;
+    private String recomment;
     private Button order,join,comment,edit,cancel;
     private ImageView imageView;
     private TextView name;
@@ -38,6 +39,7 @@ public class StoreActivity extends AppCompatActivity {
     private Dialog dialog;
     private EditText editComment;
     int position,roomNum;
+    SimpleAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +54,7 @@ public class StoreActivity extends AppCompatActivity {
         }
         order = (Button) findViewById(R.id.order);
         name = (TextView) findViewById(R.id.name);
-        comment = (Button) findViewById(R.id.listbutton);
+        //comment = (Button) findViewById(R.id.listbutton);
         name.setText(storename[position]);
         storeDistance = (TextView) findViewById(R.id.distance);
         storeDistance.setText(distance[position] + "km away");
@@ -69,29 +71,55 @@ public class StoreActivity extends AppCompatActivity {
             item.put("payment", peoplecomment[i]);
             items.add(item);
         }
-        SimpleAdapter adapter = new SimpleAdapter(this,
-                items,R.layout.food_item,new String[]{"image","name","payment"},
+        adapter = new SimpleAdapter(this,
+                items,R.layout.list_item,new String[]{"image","name","payment"},
                 new int[]{R.id.image,R.id.name,R.id.payment});
-        listView=(ListView)findViewById(R.id.list);
+        listView=this.findViewById(R.id.listcomment);
         listView.setAdapter(adapter);
         order.setOnClickListener(goOrder);
         join.setOnClickListener(joinRoom);
-//        dialog = new Dialog(this);
-//        dialog.setTitle("Edit comment!");
-//        dialog.setContentView(R.layout.activity_comment);
-//        editComment = (EditText)dialog.findViewById(R.id.editcomment);
-//        edit = (Button)dialog.findViewById(R.id.btn_edit);
-//        cancel = (Button)dialog.findViewById(R.id.btn_cancel);
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                //dialog.show();
-//                Intent intent = new Intent();
-//                intent.setClass(StoreActivity.this, MenuActivity.class);
-//                intent.putExtra("pos",i);
-//                startActivity(intent);
-//            }
-//        });
+        dialog = new Dialog(this);
+        dialog.setTitle("Edit comment!");
+        dialog.setContentView(R.layout.activity_comment);
+        editComment = (EditText)dialog.findViewById(R.id.editcomment);
+        edit = (Button)dialog.findViewById(R.id.btn_edit);
+        cancel = (Button)dialog.findViewById(R.id.btn_cancel);
+        listView.setOnItemClickListener(new ListView.OnItemClickListener(){
+
+            @Override
+            public void onItemClick(AdapterView<?>parent, View view, int pos, long id){
+                dialog.show();
+                edit.setOnClickListener((v) -> {
+                    if(editComment.getText().toString().isEmpty()){
+                        Toast.makeText(getApplicationContext(), "Text fields cannot be empty", Toast.LENGTH_LONG).show();
+                    }
+                    else{
+                        peoplecomment[pos]=editComment.getText().toString().trim();
+                        Toast.makeText(getApplicationContext(), peoplecomment[pos], Toast.LENGTH_LONG).show();
+                        List<Map<String, Object>> items = new ArrayList<>();
+                        for (int i = 0; i < peopleimage.length; i++) {
+                            Map<String, Object> item = new HashMap<>();
+                            item.put("image", peopleimage[i]);
+                            item.put("name", peoplename[i]);
+                            item.put("payment", peoplecomment[i]);
+                            items.add(item);
+                        }
+                        adapter = new SimpleAdapter(StoreActivity.this,
+                                items,R.layout.list_item,new String[]{"image","name","payment"},
+                                new int[]{R.id.image,R.id.name,R.id.payment});
+                        listView.setAdapter(adapter);
+                        dialog.dismiss();
+                    }
+                });
+                cancel.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v){
+                        dialog.dismiss();
+                    }
+                });
+            }
+
+        });
 //        comment.setOnClickListener(Edit);
     }
     public void back(View v){

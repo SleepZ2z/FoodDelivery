@@ -16,7 +16,7 @@ public class MenuActivity extends AppCompatActivity {
     private int[] foodimage = {R.drawable.cola,R.drawable.fried,R.drawable.hamburger};
     private String[] imgtxt = {"可樂","薯條","漢堡"};
     private String[] payment={"$30","$30","$60"};
-    private ListView listView;
+    private ListView listmenu;
     int position;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +33,9 @@ public class MenuActivity extends AppCompatActivity {
             items.add(item);
         }
         SimpleAdapter adapter = new SimpleAdapter(this,
-                items,R.layout.food_item,new String[]{"image","name","payment"},
+                items,R.layout.list_item,new String[]{"image","name","payment"},
                 new int[]{R.id.image,R.id.name,R.id.payment});
-        listView=(ListView)findViewById(R.id.list);
-        listView.setAdapter(adapter);
+        listmenu=(ListView)findViewById(R.id.listmenu);
+        listmenu.setAdapter(adapter);
     }
 }
