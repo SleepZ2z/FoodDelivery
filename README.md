@@ -82,3 +82,62 @@
   <td>2,4,11</td>
  </tr>
 </table>
+
+2022/5/31
+ 
+ <table>
+ <tr>
+  <td>姓名</td>
+  <td>學號</td>
+  <td>github名字</td>
+  <td>issue</td>
+ </tr>
+ <tr>
+  <td>林郁荃</td>
+  <td>D0845056</td>
+  <td>D0845056</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>邱紀元</td>
+  <td>D0843853</td>
+  <td>SleepZ2z</td>
+  <td>27</td>
+ </tr>
+ <tr>
+  <td>游鎮瑀</td>
+  <td>D0886155</td>
+  <td>D0886155</td>
+  <td></td>
+ </tr>
+</table>
+
+2022/6/7
+ 
+ <table>
+ <tr>
+  <td>姓名</td>
+  <td>學號</td>
+  <td>github名字</td>
+  <td>issue</td>
+ </tr>
+ <tr>
+  <td>林郁荃</td>
+  <td>D0845056</td>
+  <td>D0845056</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>邱紀元</td>
+  <td>D0843853</td>
+  <td>SleepZ2z</td>
+  <td>28</td>
+ </tr>
+ <tr>
+  <td>游鎮瑀</td>
+  <td>D0886155</td>
+  <td>D0886155</td>
+  <td></td>
+ </tr>
+</table>
+
