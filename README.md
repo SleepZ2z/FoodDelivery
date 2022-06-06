@@ -44,7 +44,7 @@
   <td>邱紀元</td>
   <td>D0843853</td>
   <td>SleepZ2z</td>
-  <td>7,8</td>
+  <td>3,19</td>
  </tr>
  <tr>
   <td>游鎮瑀</td>
@@ -73,7 +73,7 @@
   <td>邱紀元</td>
   <td>D0843853</td>
   <td>SleepZ2z</td>
-  <td>2,4,5</td>
+  <td>4,5</td>
  </tr>
  <tr>
   <td>游鎮瑀</td>
