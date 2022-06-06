@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="80dp"
+        android:ems="10"
+        android:hint="電子郵件"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="19dp"
+        tools:layout_editor_absoluteY="28dp" />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:hint="密碼"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="19dp"
+        tools:layout_editor_absoluteY="89dp" />
+
+    <Button
+        android:id="@+id/onLogin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
+        android:onClick="onLogin"
+        android:text="登入"
+        tools:layout_editor_absoluteX="111dp"
+        tools:layout_editor_absoluteY="238dp" />
+
+    <Button
+        android:id="@+id/onRegister"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:onClick="onRegister"
+        android:text="註冊"
+        tools:layout_editor_absoluteX="131dp"
+        tools:layout_editor_absoluteY="397dp" />
+
+
+</LinearLayout>
