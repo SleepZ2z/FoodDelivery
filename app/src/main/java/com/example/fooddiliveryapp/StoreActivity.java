@@ -80,7 +80,7 @@ public class StoreActivity extends AppCompatActivity {
         join.setOnClickListener(joinRoom);
         dialog = new Dialog(this);
         dialog.setTitle("Edit comment!");
-        dialog.setContentView(R.layout.activity_comment);
+        dialog.setContentView(R.layout.dialog_comment);
         editComment = (EditText)dialog.findViewById(R.id.editcomment);
         edit = (Button)dialog.findViewById(R.id.btn_edit);
         cancel = (Button)dialog.findViewById(R.id.btn_cancel);

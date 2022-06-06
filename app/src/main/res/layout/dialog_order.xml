@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="250sp"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/ordercount"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:hint="請輸入數量" />
+
+    <Button
+        android:id="@+id/confirm_order"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="確認" />
+    <Button
+        android:id="@+id/cancel_order"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="取消" />
+
+</LinearLayout>
