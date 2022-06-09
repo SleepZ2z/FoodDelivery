@@ -10,43 +10,43 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-
-public class HomeActivity extends AppCompatActivity {
+public class HomeOfDeliverActivity extends AppCompatActivity {
 
     public static boolean VALID_USER = false;
-    private ImageButton menuButton;
+
     ListView storeList;
     int[] resIds = {R.drawable.mc, R.drawable.pizzahut,
             R.drawable.kfc, R.drawable.dominopizza};
     String[] storeNameArray;
-    MyAdapter storeAdapter = null;
+    //MyAdapter storeAdapter = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        /*if (!VALID_USER){
+        if (!VALID_USER) {
             Intent intent = new Intent();
-            intent.setClass(HomeActivity.this, LoginActivity.class);
-            startActivity(intent);
-        }*/
-        if (!VALID_USER)
-        {
-            Intent intent = new Intent();
-            intent.setClass(HomeActivity.this,IdentityActivity.class);
+            intent.setClass(this, IdentityActivity.class);
             startActivity(intent);
         }
 
+    }
+}
+        /*if (!VALID_USER){
+            Intent intent = new Intent();
+            intent.setClass(this, LoginActivity.class);
+            startActivity(intent);
+        }*/
+
         //自定義spinner
-        Spinner spinner = findViewById(R.id.spinner);
+        /*Spinner spinner = findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> adapter= ArrayAdapter.createFromResource(
                 this,            //Context
                 R.array.address,        //被宣告的字串陣列
@@ -59,15 +59,7 @@ public class HomeActivity extends AppCompatActivity {
         SearchView sv = findViewById(R.id.searchView);
         sv.setQueryHint("搜尋想吃的料理");
         sv.setIconifiedByDefault(false);
-        menuButton = (ImageButton) findViewById(R.id.menuButtom);
-        menuButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setClass(HomeActivity.this, MystoreActivity.class);
-                startActivity(intent);
-            }
-        });
+
         //連結元件
         storeList = this.findViewById(R.id.storeList);
 
@@ -83,9 +75,9 @@ public class HomeActivity extends AppCompatActivity {
         storeList.setOnItemClickListener(new ListView.OnItemClickListener(){
 
             @Override
-            public void onItemClick(AdapterView<?>parent, View view, int position, long id){
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id){
                 Intent intent = new Intent();
-                intent.setClass(HomeActivity.this, StoreActivity.class);
+                intent.setClass(HomeOfDeliverActivity.this, StoreActivity.class);
 //                Bundle bundle = new Bundle();
 //                bundle.putInt("position",position);
                 intent.putExtra("pos",position);
@@ -101,7 +93,7 @@ public class HomeActivity extends AppCompatActivity {
     class MyAdapter extends BaseAdapter {
         LayoutInflater myInflater;
 
-        public MyAdapter(HomeActivity s){
+        public MyAdapter(HomeOfDeliverActivity s){
             myInflater = LayoutInflater.from(s);
         }
         @Override
@@ -133,5 +125,4 @@ public class HomeActivity extends AppCompatActivity {
         }
     }
 
-
-}
+}*/

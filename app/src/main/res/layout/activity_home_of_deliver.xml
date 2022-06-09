@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@null"
-    tools:context=".HomeActivity">
+    tools:context=".HomeOfDeliverActivity">
 
     <Spinner
         android:id="@+id/spinner"
@@ -55,7 +55,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <SearchView
         android:id="@+id/searchView"
         android:layout_width="335sp"
@@ -64,6 +63,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
     <ListView
         android:id="@+id/storeList"
         android:layout_width="335dp"

@@ -33,6 +33,16 @@ public class LoginActivity extends AppCompatActivity implements OnCompleteListen
         String password = etPassword.getText().toString();
         firebaseAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(this,this);
     }
+    /*public void onLogin1(View view){
+        String email = etEmail.getText().toString();
+        String password = etPassword.getText().toString();
+        firebaseAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(this,this);
+    }
+    public void onLogin2(View view){
+        String email = etEmail.getText().toString();
+        String password = etPassword.getText().toString();
+        firebaseAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(this,this);
+    }*/
     public void onRegister(View view){
         Intent intent = new Intent();
         intent.setClass(this,RegisterActivity.class);
@@ -42,7 +52,8 @@ public class LoginActivity extends AppCompatActivity implements OnCompleteListen
     public void onComplete(@NonNull Task<AuthResult> task) {
         if (task.isSuccessful()){
             Toast.makeText(this,"Successful",Toast.LENGTH_LONG).show();
-            HomeActivity.VALID_USER = true;
+            IdentityActivity.VALID_USER = true;
+            //HomeActivity.VALID_USER = true;
             finish();
         }
         else {
