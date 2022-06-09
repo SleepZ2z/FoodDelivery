@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
@@ -20,7 +21,7 @@ import android.widget.TextView;
 public class HomeActivity extends AppCompatActivity {
 
     public static boolean VALID_USER = false;
-
+    private ImageButton menuButton;
     ListView storeList;
     int[] resIds = {R.drawable.mc, R.drawable.pizzahut,
             R.drawable.kfc, R.drawable.dominopizza};
@@ -52,7 +53,15 @@ public class HomeActivity extends AppCompatActivity {
         SearchView sv = findViewById(R.id.searchView);
         sv.setQueryHint("搜尋想吃的料理");
         sv.setIconifiedByDefault(false);
-
+        menuButton = (ImageButton) findViewById(R.id.menuButtom);
+        menuButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(HomeActivity.this, MystoreActivity.class);
+                startActivity(intent);
+            }
+        });
         //連結元件
         storeList = this.findViewById(R.id.storeList);
 
