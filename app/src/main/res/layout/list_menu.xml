@@ -7,7 +7,7 @@
     android:orientation="horizontal">
 
     <ImageView
-        android:id="@+id/image"
+        android:id="@+id/foodimage"
         android:layout_width="50pt"
         android:layout_height="50pt"
         android:layout_marginTop="5pt"
@@ -17,11 +17,11 @@
 
 
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/foodname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
-        app:layout_constraintStart_toEndOf="@+id/image"
+        app:layout_constraintStart_toEndOf="@+id/foodimage"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -29,7 +29,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        app:layout_constraintStart_toEndOf="@+id/image"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
+        app:layout_constraintStart_toEndOf="@+id/foodimage"
+        app:layout_constraintTop_toBottomOf="@+id/foodname" />
 
+    <TextView
+        android:id="@+id/foodnum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="196dp"
+        app:layout_constraintBottom_toBottomOf="@+id/foodimage"
+        app:layout_constraintStart_toEndOf="@+id/foodimage"
+        app:layout_constraintTop_toTopOf="@+id/foodimage" />
 </androidx.constraintlayout.widget.ConstraintLayout>

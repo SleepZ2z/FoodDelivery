@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,6 +21,7 @@ public class CheckActivity extends AppCompatActivity {
     private int[] count_money={0,0,0};
     private String[] countText=new String[3];
     private int total=0,position;
+    private TextView totalMoney;
     private ListView listorder;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ public class CheckActivity extends AppCompatActivity {
         for(i=0; i<count_money.length; i++)
         {
             count_money[i]=count_order[i]*payment[i];
+            total+=count_money[i];
             countText[i]=String.format("%d",payment[i])+"x"+String.format("%d",count_order[i])+"="+String.format("%d",count_money[i]);
         }
         listorder=(ListView) findViewById(R.id.listcheckout);
@@ -47,5 +50,7 @@ public class CheckActivity extends AppCompatActivity {
                 items, R.layout.list_item, new String[]{"image", "name", "payment"},
                 new int[]{R.id.image, R.id.name, R.id.payment});
         listorder.setAdapter(adapter);
+        totalMoney=(TextView)findViewById(R.id.total_money);
+        totalMoney.setText("Total:"+String.format("%s",total));
     }
 }

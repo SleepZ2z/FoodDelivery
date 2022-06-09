@@ -3,7 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/JEFF/Desktop/FoodDelivery/app/src/main/res/layout/activity_check.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/JEFF/Desktop/FoodDelivery/app/src/main/res/layout/activity_check.xml" value="0.25" />
         <entry key="..\:/Users/JEFF/Desktop/FoodDelivery/app/src/main/res/layout/activity_comment.xml" value="0.17864583333333334" />
         <entry key="..\:/Users/JEFF/Desktop/FoodDelivery/app/src/main/res/layout/activity_home.xml" value="0.10733695652173914" />
         <entry key="..\:/Users/JEFF/Desktop/FoodDelivery/app/src/main/res/layout/activity_main.xml" value="0.17864583333333334" />
@@ -14,13 +14,10 @@
         <entry key="..\:/Users/JEFF/Desktop/FoodDelivery/app/src/main/res/layout/dialog_comment.xml" value="0.17864583333333334" />
         <entry key="..\:/Users/JEFF/Desktop/FoodDelivery/app/src/main/res/layout/dialog_order.xml" value="0.17864583333333334" />
         <entry key="..\:/Users/JEFF/Desktop/FoodDelivery/app/src/main/res/layout/food_item.xml" value="0.14130434782608695" />
+        <entry key="..\:/Users/JEFF/Desktop/FoodDelivery/app/src/main/res/layout/list_item.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/JEFF/Desktop/FoodDelivery/app/src/main/res/layout/list_menu.xml" value="0.17864583333333334" />
         <entry key="..\:/Users/JEFF/Desktop/FoodDelivery/app/src/main/res/layout/myselect_item.xml" value="0.17864583333333334" />
         <entry key="..\:/Users/JEFF/Desktop/FoodDelivery/app/src/main/res/layout/store_list.xml" value="0.17864583333333334" />
-        <entry key="..\:/Users/oscar/AndroidStudioProjects/FOOD/app/src/main/res/drawable/button_background.xml" value="0.121" />
-        <entry key="..\:/Users/oscar/AndroidStudioProjects/FOOD/app/src/main/res/drawable/ic_launcher_background.xml" value="0.151" />
-        <entry key="..\:/Users/oscar/AndroidStudioProjects/FOOD/app/src/main/res/layout/activity_home2.xml" value="0.35688405797101447" />
-        <entry key="..\:/Users/oscar/AndroidStudioProjects/FOOD/app/src/main/res/layout/activity_login.xml" value="0.33" />
-        <entry key="..\:/Users/oscar/AndroidStudioProjects/FOOD/app/src/main/res/layout/activity_main.xml" value="0.35688405797101447" />
       </map>
     </option>
   </component>

@@ -23,6 +23,7 @@ public class MenuActivity extends AppCompatActivity {
     private String[] imgtxt = {"可樂", "薯條", "漢堡"};
     private String[] payment = {"$30", "$30", "$60"};
     private int[] num_of_order = {0, 0, 0};
+    private String[] foodnum = {"x0", "x0", "x0"};
     private ListView listmenu;
     private Dialog dialog;
     private Button confirm, cancel, checkout;
@@ -40,14 +41,15 @@ public class MenuActivity extends AppCompatActivity {
         List<Map<String, Object>> items = new ArrayList<>();
         for (int i = 0; i < foodimage.length; i++) {
             Map<String, Object> item = new HashMap<>();
-            item.put("image", foodimage[i]);
-            item.put("name", imgtxt[i]);
+            item.put("foodimage", foodimage[i]);
+            item.put("foodname", imgtxt[i]);
             item.put("payment", payment[i]);
+            item.put("foodnum", foodnum[i]);
             items.add(item);
         }
         SimpleAdapter adapter = new SimpleAdapter(this,
-                items, R.layout.list_item, new String[]{"image", "name", "payment"},
-                new int[]{R.id.image, R.id.name, R.id.payment});
+                items, R.layout.list_menu, new String[]{"foodimage", "foodname", "payment","foodnum"},
+                new int[]{R.id.foodimage, R.id.foodname, R.id.payment,R.id.foodnum});
         listmenu = (ListView) findViewById(R.id.listmenu);
         listmenu.setAdapter(adapter);
         dialog = new Dialog(this);
@@ -65,8 +67,22 @@ public class MenuActivity extends AppCompatActivity {
                     if (orderCount.getText().toString().isEmpty()) {
                         Toast.makeText(getApplicationContext(), "Text fields cannot be empty", Toast.LENGTH_LONG).show();
                     } else {
-                        num_of_order[pos] += Integer.parseInt(orderCount.getText().toString());
-                        Toast.makeText(MenuActivity.this, String.valueOf(num_of_order[pos]), Toast.LENGTH_SHORT).show();
+                        num_of_order[pos] = Integer.parseInt(orderCount.getText().toString());
+                        foodnum[pos]="x"+String.format("%s",num_of_order[pos]);
+                        List<Map<String, Object>> items = new ArrayList<>();
+                        for (int i = 0; i < foodimage.length; i++) {
+                            Map<String, Object> item = new HashMap<>();
+                            item.put("foodimage", foodimage[i]);
+                            item.put("foodname", imgtxt[i]);
+                            item.put("payment", payment[i]);
+                            item.put("foodnum", foodnum[i]);
+                            items.add(item);
+                        }
+                        SimpleAdapter adapter = new SimpleAdapter(MenuActivity.this,
+                                items, R.layout.list_menu, new String[]{"foodimage", "foodname", "payment","foodnum"},
+                                new int[]{R.id.foodimage, R.id.foodname, R.id.payment,R.id.foodnum});
+                        listmenu.setAdapter(adapter);
+                        //Toast.makeText(MenuActivity.this, String.valueOf(num_of_order[pos]), Toast.LENGTH_SHORT).show();
                         dialog.dismiss();
                     }
                 });
