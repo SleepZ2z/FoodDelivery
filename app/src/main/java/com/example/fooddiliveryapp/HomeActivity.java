@@ -15,12 +15,11 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
-
-
 
 
 public class HomeActivity extends AppCompatActivity {
+
+    public static boolean VALID_USER = false;
 
     ListView storeList;
     int[] resIds = {R.drawable.mc, R.drawable.pizzahut,
@@ -32,6 +31,12 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        if (!VALID_USER){
+            Intent intent = new Intent();
+            intent.setClass(this, LoginActivity.class);
+            startActivity(intent);
+        }
 
         //自定義spinner
         Spinner spinner = findViewById(R.id.spinner);
@@ -72,7 +77,7 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
 //                Toast.makeText(HomeActivity.this,
 //                        "you click " + storeNameArray[position],Toast.LENGTH_SHORT).show();
-               // startActivity(new Intent(StoreActivity.this, testActivity));
+                // startActivity(new Intent(StoreActivity.this, testActivity));
             }
 
         });

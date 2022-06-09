@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity implements OnCompleteListen
     public void onComplete(@NonNull Task<AuthResult> task) {
         if (task.isSuccessful()){
             Toast.makeText(this,"Successful",Toast.LENGTH_LONG).show();
-            MainActivity.VALID_USER = true;
+            HomeActivity.VALID_USER = true;
             finish();
         }
         else {
