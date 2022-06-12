@@ -170,4 +170,31 @@
  </tr>
 </table>
 
+<table>
+ <tr>
+  <td>姓名</td>
+  <td>學號</td>
+  <td>github名字</td>
+  <td>issue</td>
+ </tr>
+ <tr>
+  <td>林郁荃</td>
+  <td>D0845056</td>
+  <td>D0845056</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>邱紀元</td>
+  <td>D0843853</td>
+  <td>SleepZ2z</td>
+  <td>google map system</td>
+ </tr>
+ <tr>
+  <td>游鎮瑀</td>
+  <td>D0886155</td>
+  <td>D0886155</td>
+  <td>google map system</td>
+ </tr>
+</table>
+
 
